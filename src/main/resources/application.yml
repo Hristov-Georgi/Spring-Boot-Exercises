@@ -1,0 +1,12 @@
+spring:
+  dataSource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mobilelele_database?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+#      defer-datasource-initialization: true
+
