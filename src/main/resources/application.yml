@@ -5,8 +5,16 @@ spring:
     username:
     password:
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
-#      defer-datasource-initialization: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+      defer-datasource-initialization: true
 
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
