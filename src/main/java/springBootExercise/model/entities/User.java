@@ -1,8 +1,7 @@
-package springBootExercise.model;
+package springBootExercise.model.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
-import springBootExercise.model.enums.Role;
 
 import java.time.LocalDateTime;
 
@@ -30,7 +29,7 @@ public class User {
     private boolean isActive;
 
     @OneToOne
-    private UserRole UserRole;
+    private springBootExercise.model.entities.UserRole UserRole;
 
     @Column(name = "image_url")
     @Length(min = 8, max = 512)

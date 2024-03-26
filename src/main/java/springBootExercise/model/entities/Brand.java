@@ -1,6 +1,7 @@
-package springBootExercise.model;
+package springBootExercise.model.entities;
 
 import jakarta.persistence.*;
+import springBootExercise.model.entities.BaseEntity;
 
 @Entity
 @Table(name = "brands")

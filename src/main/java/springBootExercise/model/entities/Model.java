@@ -1,7 +1,9 @@
-package springBootExercise.model;
+package springBootExercise.model.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
+import springBootExercise.model.entities.BaseEntity;
+import springBootExercise.model.entities.Brand;
 import springBootExercise.model.enums.VehicleCategory;
 
 import java.time.Year;

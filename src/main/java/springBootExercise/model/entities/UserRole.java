@@ -1,4 +1,4 @@
-package springBootExercise.model;
+package springBootExercise.model.entities;
 
 import jakarta.persistence.*;
 import springBootExercise.model.enums.Role;
