@@ -1,17 +1,12 @@
 package springBootExercise;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import springBootExercise.model.entities.Model;
-import springBootExercise.model.entities.Offer;
-import springBootExercise.model.enums.Engine;
-import springBootExercise.model.enums.Transmission;
-import springBootExercise.repository.BrandRepository;
-import springBootExercise.repository.ModelRepository;
-import springBootExercise.repository.OfferRepository;
-
-import java.math.BigDecimal;
-import java.time.Year;
+import springBootExercise.model.entities.User;
+import springBootExercise.model.entities.UserRole;
+import springBootExercise.model.enums.Role;
+import springBootExercise.repository.*;
 
 
 @Component
@@ -20,13 +15,19 @@ public class DBInit implements CommandLineRunner {
     private final BrandRepository brandRepository;
     private final ModelRepository modelRepository;
     private final OfferRepository offerRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final UserRoleRepository userRoleRepository;
 
     public DBInit(BrandRepository brandRepository, ModelRepository modelRepository,
-                  OfferRepository offerRepository) {
+                  OfferRepository offerRepository, PasswordEncoder passwordEncoder, UserRepository userRepository, UserRoleRepository userRoleRepository) {
         this.brandRepository = brandRepository;
         this.modelRepository = modelRepository;
         this.offerRepository = offerRepository;
 
+        this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
+        this.userRoleRepository = userRoleRepository;
     }
 
     @Override
@@ -50,6 +51,23 @@ public class DBInit implements CommandLineRunner {
 //        offer.setSeller(null);
 //
 //        this.offerRepository.save(offer);
+
+//        UserRole userRole = new UserRole(Role.USER);
+//        UserRole adminRole = new UserRole(Role.ADMIN);
+//
+//        this.userRoleRepository.save(userRole);
+//        this.userRoleRepository.save(adminRole);
+
+
+//        User user = new User();
+//        user.setUserRole(this.userRoleRepository.findById(2L).get());
+//        user.setCreated();
+//        user.setFirstName("Ivan");
+//        user.setLastName("Petrov");
+//        user.setPassword(passwordEncoder.encode("secretpassword"));
+//        user.setUsername("admin");
+//
+//        userRepository.save(user);
 
 
     }

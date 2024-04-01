@@ -29,7 +29,7 @@ public class User {
     private boolean isActive;
 
     @OneToOne
-    private springBootExercise.model.entities.UserRole UserRole;
+    private UserRole userRole;
 
     @Column(name = "image_url")
     @Length(min = 8, max = 512)
@@ -39,6 +39,9 @@ public class User {
     private LocalDateTime created;
 
     private LocalDateTime modified;
+
+    public User() {
+    }
 
     public long getId() {
         return id;
@@ -89,11 +92,11 @@ public class User {
     }
 
     public UserRole getUserRole() {
-        return UserRole;
+        return userRole;
     }
 
     public void setUserRole(UserRole userRole) {
-        UserRole = userRole;
+        this.userRole = userRole;
     }
 
     public String getImageUrl() {
