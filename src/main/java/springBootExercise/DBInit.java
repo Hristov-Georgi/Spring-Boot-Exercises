@@ -8,6 +8,9 @@ import springBootExercise.model.entities.UserRole;
 import springBootExercise.model.enums.Role;
 import springBootExercise.repository.*;
 
+import java.util.List;
+import java.util.Optional;
+
 
 @Component
 public class DBInit implements CommandLineRunner {
@@ -60,15 +63,26 @@ public class DBInit implements CommandLineRunner {
 
 
 //        User user = new User();
-//        user.setUserRole(this.userRoleRepository.findById(2L).get());
+//        user.setUserRole(List.of(this.userRoleRepository.findById(1L).get(),
+//          this.userRoleRepository.findById(2L).get()));
 //        user.setCreated();
-//        user.setFirstName("Ivan");
-//        user.setLastName("Petrov");
-//        user.setPassword(passwordEncoder.encode("secretpassword"));
-//        user.setUsername("admin");
+//        user.setFirstName("Petar");
+//        user.setLastName("Ivanov");
+//        user.setPassword(passwordEncoder.encode("secret"));
+//        user.setUsername("admin1");
 //
 //        userRepository.save(user);
 
+
+//        User user1 = new User();
+//        user.setUserRole(List.of(this.userRoleRepository.findById(1L).get()));
+//        user.setCreated();
+//        user.setFirstName("Kiril");
+//        user.setLastName("Ivanov");
+//        user.setPassword(passwordEncoder.encode("secret"));
+//        user.setUsername("user");
+//
+//        userRepository.save(user);
 
     }
 }

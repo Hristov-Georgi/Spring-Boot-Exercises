@@ -40,4 +40,10 @@ public class UserController {
 
         return "redirect:/login";
     }
+
+    @PostMapping("/logout")
+    public String logout() {
+        this.userService.logoutCurrentUser();
+        return "redirect:/";
+    }
 }

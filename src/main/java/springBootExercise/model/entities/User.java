@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -28,8 +30,8 @@ public class User {
     @Column(name = "is_active")
     private boolean isActive;
 
-    @OneToOne
-    private UserRole userRole;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<UserRole> userRole;
 
     @Column(name = "image_url")
     @Length(min = 8, max = 512)
@@ -91,12 +93,16 @@ public class User {
         isActive = active;
     }
 
-    public UserRole getUserRole() {
-        return userRole;
+    public List<UserRole> getUserRole() {
+        return Collections.unmodifiableList(userRole);
     }
 
-    public void setUserRole(UserRole userRole) {
+    public void setUserRole(List<UserRole> userRole) {
         this.userRole = userRole;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     public String getImageUrl() {

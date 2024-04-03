@@ -3,6 +3,9 @@ package springBootExercise.model.entities;
 import jakarta.persistence.*;
 import springBootExercise.model.enums.Role;
 
+import java.util.Collections;
+import java.util.List;
+
 @Entity
 @Table(name = "roles")
 public class UserRole {
@@ -14,6 +17,7 @@ public class UserRole {
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Role role;
+
 
     public UserRole(Role role) {
         this.role = role;
@@ -37,4 +41,6 @@ public class UserRole {
     public void setRole(Role role) {
         this.role = role;
     }
+
+
 }
